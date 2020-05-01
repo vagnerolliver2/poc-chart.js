@@ -6,64 +6,70 @@
         https://github.com/chartjs/Chart.js
       </a>
 
-      <canvas id="myChart" width="400" height="400"></canvas>
-
+      <Chart :type="type" :data="data" :options="options" />
   </div>
 </template>
 
 <script>
+import Chart from './Chart.vue';
 
-import Chart from 'chart.js';
+const chartOptions = {
+  legend: {
+    display: true,
+  },
+  title: {
+    display: true,
+    text: 'Chart.js Bar Chart - Stacked',
+  },
+  tooltips: {
+    mode: 'index',
+    intersect: false,
+  },
+  responsive: true,
+  scales: {
+    xAxes: [{
+      stacked: true,
+    }],
+    yAxes: [{
+      stacked: true,
+    }],
+  },
+};
 
 const barChartData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [{
-    label: 'Dataset 1',
-    // backgroundColor: window.chartColors.red,
-    stack: 'Stack 0',
-  }, {
-    label: 'Dataset 2',
-    // backgroundColor: window.chartColors.blue,
-    stack: 'Stack 0',
-  }, {
-    label: 'Dataset 3',
-    // backgroundColor: window.chartColors.green,
-    stack: 'Stack 1',
-  }],
-
-};
-window.onload = () => {
-  const ctx = document.getElementById('canvas').getContext('2d');
-  window.myBar = new Chart(ctx, {
-    type: 'bar',
-    data: barChartData,
-    options: {
-      title: {
-        display: true,
-        text: 'Chart.js Bar Chart - Stacked',
-      },
-      tooltips: {
-        mode: 'index',
-        intersect: false,
-      },
-      responsive: true,
-      scales: {
-        x: {
-          stacked: true,
-        },
-        y: {
-          stacked: true,
-        },
-      },
+  labels: ['dados consolidados', 'teste'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [5, 10],
+      backgroundColor: ['blue', 'yellow'],
     },
-  });
-};
+    {
+      label: 'Dataset 1',
+      data: [30, 10],
+      backgroundColor: ['red', 'black'],
+    },
+  ],
 
+};
 
 export default {
   name: 'HelloWorld',
+
+  components: {
+    Chart,
+  },
+
   props: {
     msg: String,
+  },
+
+  data() {
+    return {
+      type: 'bar', // was "line"
+      data: barChartData,
+      options: chartOptions,
+    };
   },
 
   mounted() {
