@@ -1,12 +1,19 @@
 <template>
   <div class="hello">
-      <h1>Exempla Graphic 1 - Chart.js</h1>
+    <div class="header">
+      <h1>Graphic chart.js</h1>
 
       <a href="https://github.com/chartjs/Chart.js">
         https://github.com/chartjs/Chart.js
       </a>
 
-      <Chart :type="type" :data="data" :options="options" />
+      <b class="color-orange">stars 58.5k</b>
+    </div>
+
+    <div class="content">
+      <div class="column"></div>
+      <div class="column"><Chart :type="type" :data="data" :options="options" /></div>
+    </div>
   </div>
 </template>
 
@@ -78,7 +85,18 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+  .content {
+    max-width: 66%;
+    margin: 10% auto;
+    display: flex;
 
+    .column {
+      width: 50%;
+    }
+  }
+
+  .color-orange {
+    color: orange
+  }
 </style>
