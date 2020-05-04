@@ -12,53 +12,14 @@
 
     <div class="content">
       <div class="column"></div>
-      <div class="column"><Chart :type="type" :data="data" :options="options" /></div>
+      <div class="column"><Chart :config="config" /></div>
     </div>
   </div>
 </template>
 
 <script>
 import Chart from './Chart.vue';
-
-const chartOptions = {
-  legend: {
-    display: true,
-  },
-  title: {
-    display: true,
-    text: 'Chart.js Bar Chart - Stacked',
-  },
-  tooltips: {
-    mode: 'index',
-    intersect: false,
-  },
-  responsive: true,
-  scales: {
-    xAxes: [{
-      stacked: true,
-    }],
-    yAxes: [{
-      stacked: true,
-    }],
-  },
-};
-
-const barChartData = {
-  labels: ['dados consolidados', 'teste'],
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [5, 10],
-      backgroundColor: ['blue', 'yellow'],
-    },
-    {
-      label: 'Dataset 1',
-      data: [30, 10],
-      backgroundColor: ['red', 'black'],
-    },
-  ],
-
-};
+import chartBarConfig from '../config/chartBar';
 
 export default {
   name: 'HelloWorld',
@@ -73,22 +34,18 @@ export default {
 
   data() {
     return {
-      type: 'bar', // was "line"
-      data: barChartData,
-      options: chartOptions,
+      config: chartBarConfig(),
     };
   },
 
-  mounted() {
-
-  },
+  mounted() {},
 };
 </script>
 
 <style lang="scss" scoped>
   .content {
     max-width: 66%;
-    margin: 10% auto;
+    margin: 3% auto;
     display: flex;
 
     .column {
