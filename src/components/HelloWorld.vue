@@ -38,7 +38,15 @@ export default {
     };
   },
 
-  mounted() {},
+  mounted() {
+    // let chart = this.config.data;
+    // for (let i = 0; i < chart.datasets.length; i++) {
+    //   chart.options.data[2].dataPoints.push({
+    //     label: chart.options.data[0].dataPoints[i].label,
+    //     y: chart.options.data[0].dataPoints[i].y + chart.options.data[1].dataPoints[i].y
+    //   });
+    // }
+  },
 };
 </script>
 
