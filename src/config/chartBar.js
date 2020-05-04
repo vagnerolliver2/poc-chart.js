@@ -71,12 +71,10 @@ export default () => ({
         type: 'line',
         data: [8000, 7500, 4800],
         borderColor: 'transparent',
-        // color: '#000000',
-        // label: 'Total 8000',
-        // borderCapStyle: 'round',
-        // hidden: true,
-        // backgroundColor: ['transparent', 'black', 'black'],
-        // barPercentage: 1,
+        datalabels: {
+          color: '#000',
+          align: 'end',
+        },
         fill: false,
         stepped: true,
 
