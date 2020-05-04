@@ -11,15 +11,18 @@
     </div>
 
     <div class="content">
-      <div class="column"></div>
       <div class="column"><Chart :config="config" /></div>
+      <div class="column"><Chart :config="config2" /></div>
+      <div class="column"><Chart :config="config3" /></div>
     </div>
   </div>
 </template>
 
 <script>
 import Chart from './Chart.vue';
-import chartBarConfig from '../config/chartBar';
+import chartBarConfig1 from '../config/chartBar1';
+import chartBarConfig2 from '../config/chartBar2';
+import chartBarConfig3 from '../config/chartBar3';
 
 export default {
   name: 'HelloWorld',
@@ -34,7 +37,9 @@ export default {
 
   data() {
     return {
-      config: chartBarConfig(),
+      config: chartBarConfig1(),
+      config2: chartBarConfig2(),
+      config3: chartBarConfig3(),
     };
   },
 
