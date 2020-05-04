@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "chart.js": "^2.9.3",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "core-js": "^3.6.4",
     "single-spa-vue": "^1.5.2",
     "systemjs-webpack-interop": "^1.2.1",
