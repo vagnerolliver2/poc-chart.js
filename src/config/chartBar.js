@@ -46,6 +46,7 @@ export default () => ({
         barPercentage: 0.1,
       }],
     },
+
   },
 
   data: {
@@ -54,10 +55,12 @@ export default () => ({
       {
         data: [7500, 1500, 2000],
         backgroundColor: ['#3e3d56', '#d0cde1', '#cdd0db', ''],
+        barPercentage: 0.5,
       },
       {
         data: [500, 6000, 2800],
         backgroundColor: ['#b72126', '#8188a6', '#66637e', ''],
+        barPercentage: 0.5,
       },
     ],
   },
